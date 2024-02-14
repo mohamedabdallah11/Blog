@@ -28,9 +28,7 @@ Create
         <div class="mb-3">
             <label  class="form-label">Post Creator</label>
             <select name="post_creator" class="form-control" required>
-            @foreach($users as $user)
-            <option value="{{$user->id}}">{{$user->name}}</option>
-            @endforeach
+            <option value="{{$users->id}}">{{$users->name}}</option>
 
             </select>
         

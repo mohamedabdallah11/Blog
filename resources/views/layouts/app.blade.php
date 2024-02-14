@@ -5,11 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>
         @yield('title')
-
     </title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
   </head>
   <body>
+    
 
   <nav class="navbar navbar-expand-lg bg-body-tertiary">
   <div class="container-fluid">
@@ -19,8 +19,13 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-  
+        @if(Auth::check()!=null)
           <a class="nav-link" href="{{route('posts.index')}}">all posts</a>
+          <a class="nav-link" href="{{route('users.logOut')}}">logOut</a>
+          @endif
+          <a class="nav-link" href="{{route('users.register')}}">Register</a>
+          <a class="nav-link" href="{{route('users.login')}}">Login</a>
+
         </li>
     </div>
   </div>

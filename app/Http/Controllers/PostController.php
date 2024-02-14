@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Post;
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class PostController extends Controller
 {
@@ -19,8 +20,9 @@ class PostController extends Controller
         return  view('posts.show', ['posts' => $PostsData]);
     }
     public function create()
-    {
-        $users = User::all();
+    {   $userId=Auth::user()->id;
+        $users= User::find($userId);
+        
         return view('posts.create', ['users' => $users]);
     }
 

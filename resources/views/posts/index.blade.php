@@ -4,9 +4,11 @@
 index
 @endsection
 @section('content')
+@if(Auth::user()->is_admin == 1)
     <div class="text-center">
     <a href="{{route('posts.create')}}" class="btn btn-success">CreatePost</a>
 </div>
+@endif
 <table class="table mt-4">
   <thead>
     <tr>
